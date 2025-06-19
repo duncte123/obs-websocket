@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.28...3.30)
 set(obs-websocket_VERSION 5.6.1)
 set(OBS_WEBSOCKET_RPC_VERSION 1)
 
+project(obs-websocket_VERSION 5.6.1)
+
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/common/bootstrap.cmake" NO_POLICY_SCOPE)
 
 #include(cmake/obs-websocket-api.cmake)

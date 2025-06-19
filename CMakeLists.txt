@@ -3,13 +3,15 @@ cmake_minimum_required(VERSION 3.28...3.30)
 set(obs-websocket_VERSION 5.6.1)
 set(OBS_WEBSOCKET_RPC_VERSION 1)
 
-include(cmake/obs-websocket-api.cmake)
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/common/bootstrap.cmake" NO_POLICY_SCOPE)
 
-option(ENABLE_WEBSOCKET "Enable building OBS with websocket plugin" ON)
-if(NOT ENABLE_WEBSOCKET)
-  target_disable(obs-websocket)
-  return()
-endif()
+#include(cmake/obs-websocket-api.cmake)
+#
+#option(ENABLE_WEBSOCKET "Enable building OBS with websocket plugin" ON)
+#if(NOT ENABLE_WEBSOCKET)
+#  target_disable(obs-websocket)
+#  return()
+#endif()
 
 # Find Qt
 find_package(Qt6 REQUIRED Core Widgets Svg Network)
@@ -27,6 +29,10 @@ find_package(Websocketpp 0.8 REQUIRED)
 
 # Find Asio
 find_package(Asio 1.12.1 REQUIRED)
+
+include(compilerconfig)
+include(defaults)
+include(helpers)
 
 add_library(obs-websocket MODULE)
 add_library(OBS::websocket ALIAS obs-websocket)

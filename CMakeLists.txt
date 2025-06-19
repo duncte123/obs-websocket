@@ -5,7 +5,7 @@ include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/common/bootstrap.cmake" NO_POLICY_SCO
 set(obs-websocket_VERSION 5.6.1)
 set(OBS_WEBSOCKET_RPC_VERSION 1)
 
-project(obs-websocket_VERSION 5.6.1)
+project(obs-websocket VERSION 5.6.1)
 
 include(compilerconfig)
 include(defaults)
